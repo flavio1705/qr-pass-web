@@ -20,7 +20,7 @@ import { PersonModal } from "./components/PersonalModal"
 interface Person {
   id: string
   NOMBRE_APELLIDO: string
-  TELEFONO: string | number
+  TELEFONO: string
   JUEVES: number
   VIERNES: number
   SABADO: number
@@ -218,7 +218,7 @@ export default function Home() {
             <PaginationItem>
               <PaginationPrevious
                 onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-                disabled={currentPage === 1}
+                // disabled={currentPage === 1}
               />
             </PaginationItem>
             {[...Array(totalPages)].map((_, index) => (
@@ -231,7 +231,7 @@ export default function Home() {
             <PaginationItem>
               <PaginationNext
                 onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-                disabled={currentPage === totalPages}
+                // disabled={currentPage === totalPages}
               />
             </PaginationItem>
           </PaginationContent>
