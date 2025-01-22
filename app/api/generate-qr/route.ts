@@ -34,7 +34,7 @@ export async function POST(request: Request) {
 
     // Upload the image to Supabase Storage
     const fileName = `qr-${id}-${Date.now()}.png`
-    const { data, error } = await supabase.storage.from("qr-codes").upload(fileName, finalImageBuffer, {
+    const { error } = await supabase.storage.from("qr-codes").upload(fileName, finalImageBuffer, {
       contentType: "image/png",
     })
 

@@ -98,6 +98,7 @@ export default function Home() {
       // Update local state
       setData((prevData) => prevData.map((person) => (ids.includes(person.id) ? { ...person, ENVIADO: 1 } : person)))
     } catch (error) {
+      console.log(error);
       toast.error("Failed to send WhatsApp messages")
     }
   }
@@ -129,6 +130,7 @@ export default function Home() {
         toast.success("Person added successfully")
       }
     } catch (error) {
+      console.log(error);
       toast.error("Failed to save person")
     }
   }
